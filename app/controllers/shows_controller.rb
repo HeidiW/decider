@@ -1,9 +1,13 @@
 class ShowsController < ApplicationController
 
-	before_action:current_user
+	#before_action:current_user
 
 	def search 
-		@shows = Show.tms_search(params[:search_term])
+	end
+
+	def results
+		@genre = params[:genre]
+		@results = Show.search_by_genre(@genre)
 	end
 
 	def save
@@ -20,6 +24,6 @@ class ShowsController < ApplicationController
     def destroy
     	Show.delete(params[:id])
     	redirect_to root_path
-end
+	end
 
 end

@@ -1,18 +1,5 @@
-<% @shows.each do |show| %>
-
-<div class="tweleve columns">
-
-	<div class='three columns'>
-		<h2><%= show[:title] %></h2>
-	</div>
-	<img src="<%= show[:]%>" alt="">
-
-<form action="/shows/save" method='post'>
-		<%= token_tag %>
-	<input type="hidden" name='track_id' value='<%= show[:] %>'> 
-<%= show[:] %>
-	<button type='submit'>Save</button>
-</form>
-</div>
-
+<%= form_tag("/search", method: "post") do %>
+  <%= label_tag(:genre, "Search by genre:") %>
+  <%= text_field_tag(:genre) %>
+  <%= submit_tag("Search") %>
 <% end %>
