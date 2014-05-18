@@ -1,3 +1,3 @@
 class User < ActiveRecord::Base
-	has_many :shows
+	acts_as_authentic
 end

@@ -1,0 +1,13 @@
+<h1>Welcome to Decider</h1>
+<%= form_for @user, url: {action: "create"} do |f| %>
+	<%= f.text_field :name, :placeholder => "Name" %>
+	<%= f.number_field :email, :placeholder => "Email" %>
+	<%= f.label :mass, 'Kg' %>
+	<%= f.number_field :diameter, :placeholder => "Diameter of planet" %>
+	<%= f.label :diameter, 'Km' %>
+	<%= f.text_field :life, :placeholder => "" %>
+	<%= f.label :life, 'Life?' %>
+	<%= f.text_field :image_url, :placeholder => "e.g. http://somesite.com/mercury.jpg" %>
+	<%= f.label :image_url, 'Image URL' %>
+  <%= f.submit "Create" %>
+<% end %>
