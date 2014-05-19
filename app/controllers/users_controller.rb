@@ -3,7 +3,7 @@ class UsersController < ApplicationController
 	#users GET    /users(.:format)   users#index
 	def index
 		@user = current_user
-		@user = User.all
+		@users = User.all
 	end
 
 	#POST   /users(.:format)  users#create
