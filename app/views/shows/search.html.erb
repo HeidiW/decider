@@ -1,5 +1,9 @@
 <%= form_tag("/search", method: "post") do %>
   <%= label_tag(:genre, "Search by genre:") %>
   <%= text_field_tag(:genre) %>
+  <%= label_tag(:keyword, "Search by mood, i.e. suspenseful, engaging, etc.:") %>
+  <%= text_field_tag(:mood) %>
+  <%= label_tag(:keyword, "Search by setting, i.e. subconcious mind, Japan, etc.:") %>
+  <%= text_field_tag(:setting) %>
   <%= submit_tag("Search") %>
 <% end %>
