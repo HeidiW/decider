@@ -29,6 +29,7 @@ gem 'spring',        group: :development
 gem 'rails_12factor', group: :production 
 gem 'tmsapi'
 gem 'httparty'
+gem 'bcrypt-ruby', '~> 3.1.5'
 
 gem 'pry'
 gem 'pry-nav'

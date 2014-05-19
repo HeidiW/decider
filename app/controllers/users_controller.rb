@@ -2,6 +2,7 @@ class UsersController < ApplicationController
 
 	#users GET    /users(.:format)   users#index
 	def index
+		@user = current_user
 		@user = User.all
 	end
 
@@ -11,17 +12,17 @@ class UsersController < ApplicationController
 		redirect_to "/user/#{@user.id}"
 	end
 
-	#new_planet GET    /users/new(.:format)  users#new
+	#new_user GET    /users/new(.:format)  users#new
 	def new
 		@user = User.new
 	end
 
-	#edit_user GET    /users/:id/edit(.:format)  planets#edit
+	#edit_user GET    /users/:id/edit(.:format)  users#edit
 	def edit
 		@user = User.find(params[:id])
 	end
 
-	 #planet GET    /planets/:id(.:format)  planets#show
+	 #user GET    /planets/:id(.:format)  userss#show
 	def show
 	 	@user = User.find(params[:id])
 	end
