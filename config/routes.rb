@@ -4,9 +4,6 @@ Rails.application.routes.draw do
     	resources :shows
 	end
 
-    get 'users/new' => "users#new"
-    post 'users' => "users#create"
-    get 'users' => "users#index"
     root "users#index"
 
     get 'sessions/new' => 'sessions#new', as: 'log_in'

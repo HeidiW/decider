@@ -1,9 +1,25 @@
+<h1>Decidr</h1>
+
+<h2>Find what you really want to watch here.</h2>
+
 <%= form_tag("/search", method: "post") do %>
+<p>
   <%= label_tag(:genre, "Search by genre:") %>
-  <%= text_field_tag(:genre) %>
-  <%= label_tag(:keyword, "Search by mood, i.e. suspenseful, engaging, etc.:") %>
+  <select name="genre">
+  	<% Show.available_genres.each do |genre| %>
+  		<option value="<%= genre %>"><%= genre %></option>
+  	<% end %>
+  </select>
+</p>
+<p>
+  <%= label_tag(:keyword, "Search by mood, i.e. supsenseful, intricate, etc.:") %>
   <%= text_field_tag(:mood) %>
-  <%= label_tag(:keyword, "Search by setting, i.e. subconcious mind, Japan, etc.:") %>
+</p>
+<p>
+  <%= label_tag(:keyword, "Search by setting, i.e. Japan, subconscious mind, etc.:") %>
   <%= text_field_tag(:setting) %>
+</p>
+<p>
   <%= submit_tag("Search") %>
+</p>
 <% end %>

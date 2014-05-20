@@ -1,10 +1,25 @@
-<h1>Shows matching genre '<%= @genre %>'</h1>
+<h1>Shows matching genre '<%= @genre %>', '<%= @mood %>', '<%= @setting %>'</h1>
 <% @results.each do |show| %>
 	<ul>
-		<li><strong>Title:</strong> <%= show["program"]["title"] %></li>
-		<li><strong>Description:</strong> <%= show["program"]["short_description"] %></li>
-		<li><strong>Start Time:</strong> <%= Time.parse(show["start_time"]).strftime("%a %D %I:%M %p") %></li>
-		<li><strong>Duration:</strong> <%= show["duration"] %> minutes</li>
-		<li><strong>Station:</strong> <%= show["station"]["call_sign"] %></li>
+		<li>
+			<strong>Title:</strong>
+			<%= show["program"]["title"] %>
+		</li>
+		<li>
+			<strong>Description:</strong>
+			<%= show["program"]["short_description"] %>
+		</li>
+		<li>
+			<strong>Start Time:</strong>
+			<%= Time.parse(show["start_time"]).strftime("%a %D %I:%M %p") %>
+		</li>
+		<li>
+			<strong>Duration:</strong>
+			<%= show["duration"] %> minutes
+		</li>
+		<li>
+			<strong>Station:</strong>
+			<%= show["station"]["call_sign"] %>
+		</li>
 	</ul>
 <% end %>
