@@ -33,6 +33,7 @@ gem 'bcrypt-ruby', '~> 3.1.5'
 
 gem 'pry'
 gem 'pry-nav'
+gem 'pry-byebug'
 gem 'rspec-rails'
 
 # Use ActiveModel has_secure_password

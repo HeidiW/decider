@@ -9,7 +9,7 @@ class UsersController < ApplicationController
 	#POST   /users(.:format)  users#create
 	def create
 		@user = User.create(user_params)
-		redirect_to "/user/#{@user.id}"
+		redirect_to "/users/#{@user.id}"
 	end
 
 	#new_user GET    /users/new(.:format)  users#new
