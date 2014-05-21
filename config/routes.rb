@@ -10,10 +10,14 @@ Rails.application.routes.draw do
 
   get 'profiles' => 'profiles#index'
 
-  get '/search', to: 'shows#search'
+  get '/search', to: 'shows#search', as: 'search'
   post '/search', to: 'shows#results'
+
+  post '/users/shows', to: 'users#add_show'
 
   resources :users do
     resources :shows
   end
+
+
 end
