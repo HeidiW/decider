@@ -1,3 +1,22 @@
  <div class="three columns">
     <h1>Full Width Column</h1>
   </div>
+
+body {
+	background-color: purple;
+	font-family: "Arial", sans-serif;
+	margin: 0;
+}
+
+#index {
+	text-align: center;
+}
+
+.page-header {
+	background-color: yellow;
+	font-size: 1.25em;
+	padding: 20px 2rem;
+}
+
+.artist-form {
+	padding: 25px 2rem;

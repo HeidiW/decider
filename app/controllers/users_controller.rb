@@ -8,8 +8,12 @@ class UsersController < ApplicationController
 
 	#POST   /users(.:format)  users#create
 	def create
-		@user = User.create(user_params)
-		redirect_to "/search"
+		@user = User.new(user_params)
+		if @user.save
+			redirect_to log_in_path
+		else
+			render 'new'
+		end
 	end
 
 	#new_user GET    /users/new(.:format)  users#new
