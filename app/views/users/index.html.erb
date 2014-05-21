@@ -1,14 +1,14 @@
 
-<h2>Welcome to Decider</h2>
+<h1 class='offset-by-two five columns'>Welcome to Decider</h1>
 
 <% if current_user %>
-  <p>
+  <h2 class='login-signup five columns'>
     <%= current_user.email %>
-  </p>
+  </h2>
   <%= link_to "Log-Out", log_out_path, method: :delete %>
 <% else %>
-  <div class="login-signup">
+  <h2 class="login-signup five columns">
     <%= link_to "Log-In", log_in_path, class: "button" %>
     <%= link_to "Sign-Up", new_user_path, class: "button" %>
-  </div>
+  </h2>
 <% end %>

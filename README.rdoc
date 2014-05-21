@@ -1,7 +1,16 @@
 == README
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+Ruby version: 
+
+For this app I used Tribune Media Services API:
+http://developer.tmsapi.com/
+
+Configuration:
+
+Favorites buttons from search page: http://stackoverflow.com/questions/12360148/rails-link-to-or-button-to-post-request-with-parameters
+
+
+
 
 Things you may want to cover:
 

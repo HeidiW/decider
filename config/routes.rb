@@ -15,6 +15,8 @@ Rails.application.routes.draw do
 
   post '/users/shows', to: 'users#add_show'
 
+  #get "/about"
+
   resources :users do
     resources :shows
   end
