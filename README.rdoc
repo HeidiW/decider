@@ -5,6 +5,11 @@ Ruby version:
 For this app I used Tribune Media Services API:
 http://developer.tmsapi.com/
 
+API search success: The genres output was basically an array of strings. So I edited the loop as an array of genres, instructions are available here:
+available_genres.each: http://stackoverflow.com/questions/12983815/how-do-i-use-an-array-of-an-array-of-strings-to-match-another-string
+
+Favorites button: I wanted the user to be able to search for shows and pick favorites without necessarily saving every search option in the database. So I used ActiveSupport to encode the object as a JSON string (text), then that text was submitted to the shows controller, and the shows controller converted the text from a string back into a show, to be saved in the database. 
+
 Configuration:
 
 Favorites buttons from search page: http://stackoverflow.com/questions/12360148/rails-link-to-or-button-to-post-request-with-parameters
