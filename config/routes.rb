@@ -15,7 +15,7 @@ Rails.application.routes.draw do
 
   post '/users/shows', to: 'users#add_show'
 
-  #get "/about"
+  match '/help' => to: 'pages#help'
 
   resources :users do
     resources :shows
