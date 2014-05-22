@@ -30,6 +30,9 @@ The link underlines are handled by the text-decoration property. Look in style.c
 
 Style scoped, for html5, makes this piece of code html compliant. Sometimes you would not be able to render the style tag if it were outside the body.
 
+Used $font-stack: http://cssfontstack.com/ 
+From Dreamweaver: http://stackoverflow.com/questions/5124915/what-is-them-meaning-of-terms-css-font-stack-whats-new
+
 
 
 

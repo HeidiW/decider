@@ -1,5 +1,4 @@
-<% if current_user %>
-	<%= form_tag("/search", method: "post") do %>
+<%= form_tag("/search", method: "post") do %>
 	<p>
 	  <%= label_tag(:genre, "Search by genre:") %>
 	  <select name="genre">
@@ -12,6 +11,3 @@
 	  <%= submit_tag("Search") %>
 	</p>
 	<% end %>
-<% else %>
-	Sorry, you must be signed in to search.
-<% end %>
