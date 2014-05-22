@@ -1,4 +1,4 @@
-<% if @current_user %>
+<% if current_user %>
 	<%= form_tag("/search", method: "post") do %>
 	<p>
 	  <%= label_tag(:genre, "Search by genre:") %>
