@@ -1,3 +1,7 @@
+<style scoped>
+  .site-header {display: none;}
+</style>
+
 <h1 class="welcome-heading">Welcome to Decider</h1>
 <h2 class="tagline">Search by genre for what you want to watch now</h2>
 <div class="welcome-body">
@@ -10,8 +14,10 @@
 		  <h2 class="login-signup">
 		  	Whoops! Looks like you're not signed in.
 		  </h2>
+		  <div class="login-signup-buttons">
 		    <%= link_to "Log-In", log_in_path, class: "button" %>
 		    <%= link_to "Sign-Up", new_user_path, class: "button" %>
+		   </div>
 		<% end %>
 	</div>
 

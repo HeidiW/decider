@@ -36,3 +36,7 @@ p {
     margin: 0 1rem;
     text-decoration: none;
 }
+
+.site-header {
+    margin-top: 3em;
+}

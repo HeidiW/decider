@@ -1,4 +1,4 @@
-class PagesController < ActionController::Base
-  def help
-  end
+class PagesController < ApplicationController
+	def help
+	end
 end
