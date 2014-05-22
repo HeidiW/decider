@@ -1,14 +1,19 @@
+<h1 class="welcome-heading">Welcome to Decider</h1>
+<h2 class="tagline">Search by genre for what you want to watch now</h2>
+<div class="welcome-body">
+	<div class="user-greeting">
+		<% if current_user %>
+		  <h2 class='login-signup'>
+		    <%= current_user.email %>
+		  </h2>
+		<% else %>
+		  <h2 class="login-signup">
+		  	Whoops! Looks like you're not signed in.
+		  </h2>
+		    <%= link_to "Log-In", log_in_path, class: "button" %>
+		    <%= link_to "Sign-Up", new_user_path, class: "button" %>
+		<% end %>
+	</div>
 
-<h1 class='offset-by-two five columns'>Welcome to Decider</h1>
-
-<% if current_user %>
-  <h2 class='login-signup five columns'>
-    <%= current_user.email %>
-  </h2>
-  <%= link_to "Log-Out", log_out_path, method: :delete %>
-<% else %>
-  <h2 class="login-signup five columns">
-    <%= link_to "Log-In", log_in_path, class: "button" %>
-    <%= link_to "Sign-Up", new_user_path, class: "button" %>
-  </h2>
-<% end %>
+	<%= image_tag "old-television.jpg", class: "old-tv" %>
+</div>

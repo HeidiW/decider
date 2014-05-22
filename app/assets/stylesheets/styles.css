@@ -1,12 +1,7 @@
 body {
   font: 100% $font-stack;
   color: $primary-color;
-}
-
-.login-signup {
-	background-color: lightblue;
-	border-radius: 35%;
-	padding-left: 5em;
+  padding: 1rem;
 }
 
 h1 {
@@ -30,4 +25,14 @@ p {
     font-size: 16px;
     line-height: 23px;
     margin: 0 0 23px 0;
-    }
+}
+
+.site-navigation {
+    font-size: 1.5em;
+    text-align: center;
+}
+
+.site-navigation a {
+    margin: 0 1rem;
+    text-decoration: none;
+}
