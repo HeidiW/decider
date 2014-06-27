@@ -1,26 +1,26 @@
 <h1>Shows matching genre '<%= @genre %>'</h1>
 <% @results.each do |show| %>
-	<ul>
-		<li>
-			<strong>Title:</strong>
-			<%= show.title %>
-		</li>
-		<li>
-			<strong>Description:</strong>
-			<%= show.description %>
-		</li>
-		<li>
-			<strong>Start Time:</strong>
-			<%= show.airtime.strftime("%a %D %I:%M %p") %>
-		</li>
-		<li>
-			<strong>Duration:</strong>
-			<%= show.duration %> minutes
-		</li>
-		<li>
-			<strong>Station:</strong>
-			<%= show.network %>
-		</li>
-	</ul>
-	<%= button_to 'Add to Favorites', user_shows_path(current_user), :params => {:show => ActiveSupport::JSON.encode(show)}, :method => :post  %>
+  <ul>
+    <li>
+      <strong>Title:</strong>
+      <%= show.title %>
+    </li>
+    <li>
+      <strong>Description:</strong>
+      <%= show.description %>
+    </li>
+    <li>
+      <strong>Start Time:</strong>
+      <%= show.airtime.strftime("%a %D %I:%M %p") %>
+    </li>
+    <li>
+      <strong>Duration:</strong>
+      <%= show.duration %> minutes
+    </li>
+    <li>
+      <strong>Station:</strong>
+      <%= show.network %>
+    </li>
+  </ul>
+  <%= button_to 'Add to Favorites', user_shows_path(current_user), :params => {:show => ActiveSupport::JSON.encode(show)}, :method => :post  %>
 <% end %>
