@@ -25,6 +25,7 @@ class ShowsController < ApplicationController
   end
 
   def save
+    # I don't know what ShowsController.tms_lookup does or where to find this method.
     new_show = ShowsController.tms_lookup(params[:track_id])
     new_show.save
     @current_user.shows << new_show
