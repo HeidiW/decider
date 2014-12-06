@@ -1,4 +1,6 @@
-
+body {
+    padding: 40px;
+}
 h1 {
     font-family: 'Dancing Script', cursive;
     font-weight: 700;

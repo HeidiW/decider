@@ -26,9 +26,9 @@ class UsersController < ApplicationController
 		@user = User.find(params[:id])
 	end
 
-	 #user GET    /planets/:id(.:format)  userss#show
+	 #user GET    /users/:id(.:format)  userss#show
 	def show
-	 	@user = User.find(params[:id])
+		@user = User.find(params[:id])
 	end
 
 	#PUT    /users/:id(.:format)  users#update
