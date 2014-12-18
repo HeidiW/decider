@@ -1,37 +1,35 @@
 <!DOCTYPE html>
 <html>
-<head>
-	<title>DeciderApp</title>
-	<%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track' => true %>
-	<%= yield :stylesheet %>
-	<%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
-	<%= csrf_meta_tags %>
-	<link href="http://fonts.googleapis.com/css?family=Dancing+Script:700|EB+Garamond" rel="stylesheet" type="text/css" />
-</head>
-<body>
-	<div class="container">
-		<nav class="site-navigation">
-			<%= link_to "Home", root_path %>    
-			<%= link_to "Search",  search_path %>
-			<%= link_to "About", help_path %>
-			
-			<% if current_user %>
-			<%= link_to "Log-Out", log_out_path, method: :delete %>
-			<% else %>
-			<%= link_to "Log-In", log_in_path %>
-			<%= link_to "Sign-Up", new_user_path %>
-			<% end %>
-		</nav>
+  <head>
+    <title>DeciderApp</title>
+    <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track' => true %>
+    <%= yield :stylesheet %>
+    <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+    <%= csrf_meta_tags %>
+    <link href="http://fonts.googleapis.com/css?family=Dancing+Script:700|EB+Garamond" rel="stylesheet" type="text/css" />
+  </head>
+  <body>
+    <div class="container">
+      <nav class="site-navigation">
+        <%= link_to "Home", root_path %>
+        <%= link_to "Search",  search_path %>
+        <%= link_to "About", help_path %>
+        <% if current_user %>
+          <%= link_to "Log-Out", log_out_path, method: :delete %>
+        <% else %>
+          <%= link_to "Log-In", log_in_path %>
+          <%= link_to "Sign-Up", new_user_path %>
+        <% end %>
+      </nav>
+      <header class="site-header">
+        <h1>Decider</h1>
 
-		<header class="site-header">
-			<h1>Decider</h1>
+        <h2>Find what you really want to watch here.</h2>
+      </header>
 
-			<h2>Find what you really want to watch here.</h2>
-		</header>
-
-		<%= yield %>
-	</div>
+      <%= yield %>
+    </div>
 
 
-</body>
+  </body>
 </html>

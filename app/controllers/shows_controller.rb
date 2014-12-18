@@ -1,51 +1,46 @@
 class ShowsController < ApplicationController
 
-	#before_action:current_user
+  def search
+  end
 
-	def search 
-	end
+  def results
+    @genre = params[:genre]
+    @results = Show.search_by_genre(@genre).map do |show|
+      title = show["program"]["title"]
+      genre = show["program"]["genres"].join(", ")
+      desc = show["program"]["short_description"]
+      start = Time.parse(show["start_time"])
+      duration = show["duration"]
+      network = show["station"]["call_sign"]
+      Show.new(
+               title: title,
+               description: desc,
+               genre: genre,
+               network: network,
+               airtime: start,
+               duration: duration
 
-	def results
-		@genre = params[:genre]
-		@results = Show.search_by_genre(@genre).map do |show|
-			title = show["program"]["title"]
-			genre = show["program"]["genres"].join(", ")
-			desc = show["program"]["short_description"]
-			start = Time.parse(show["start_time"])
-			duration = show["duration"]
-			network = show["station"]["call_sign"]
-			Show.new(
+              )
+    end
+  end
 
-				title: title,
-				description: desc,
-				genre: genre,
-				network: network,
-				airtime: start,
-				duration: duration
+  def save
+    # I don't know what ShowsController.tms_lookup does or where to find this method.
+    new_show = ShowsController.tms_lookup(params[:track_id])
+    new_show.save
+    @current_user.shows << new_show
 
-			)
-		end
-	end
+    redirect_to root_path
+  end
 
-	def save
+  def create
+    current_user.shows.create(ActiveSupport::JSON.decode(params[:show]))
+    redirect_to current_user
+  end
 
-		new_show = ShowsController.tms_lookup(params[:track_id])
-
-		new_show.save
-
-		@current_user.shows << new_show
-
-		redirect_to root_path
-	end
-
-	def create
-		current_user.shows.create(ActiveSupport::JSON.decode(params[:show]))
-		redirect_to current_user
-	end
-
-    def destroy
-    	Show.delete(params[:id])
-    	redirect_to root_path
-	end
+  def destroy
+    Show.delete(params[:id])
+    redirect_to root_path
+  end
 
 end
