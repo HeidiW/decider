@@ -5,7 +5,9 @@ class ShowsController < ApplicationController
 
   def results
     @genre = params[:genre]
-    @results = Show.search_by_genre(@genre).map do |show|
+    start_time = params[:start_date_time]
+    end_time = params[:end_date_time]
+    @results = Show.search_by_genre(@genre, start_time, end_time).map do |show|
       title = show["program"]["title"]
       genre = show["program"]["genres"].join(", ")
       desc = show["program"]["short_description"]

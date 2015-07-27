@@ -1,10 +1,23 @@
 class Show < ActiveRecord::Base
   has_and_belongs_to_many :users
 
-  def self.search_by_genre(genre)
+  def self.search_by_genre(genre, start_date_time=nil, end_date_time=nil)
     @tms ||= self.get_api_instance
 
-    shows = @tms.programs.new_shows lineupId: 'USA-TX42500-X', startDateTime: Time.now.strftime("%FT%RZ")
+    puts "start_date_time is", start_date_time,
+         "end_date_time is", end_date_time
+
+    start_date_time ||= Time.now.strftime("%FT%RZ")
+
+    puts "start_date_time is now", start_date_time
+
+    query = {
+      lineupId: 'USA-TX42500-X',
+      startDateTime: start_date_time,
+    }
+    query[:endDateTime] = end_date_time if end_date_time
+
+    shows = @tms.programs.new_shows(query)
     shows = shows.select {|show| show["program"]["title_lang"] == "en"}
     results = shows.select do |show|
       if show["program"]["genres"]
